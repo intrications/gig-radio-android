@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <fr.castorflex.android.circularprogressbar.CircularProgressBar
+                android:id="@+id/progress"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:indeterminate="true"
+                app:cpb_color="#fff"
+                app:spb_speed="1.0"
+                app:cpb_stroke_width="4dp"
+                app:cpb_min_sweep_angle="10"
+                app:cpb_max_sweep_angle="300"
+                android:layout_gravity="center" />
+
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/artist_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:typeface="roboto_thin"
+                android:textSize="48sp"
+                android:textColor="@android:color/white"
+                tools:text="Artist" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/track_name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:typeface="roboto_regular"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                tools:text="Song name" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/next_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_action_playback_next"
+                android:background="?android:attr/selectableItemBackground"
+                app:holdr_onClick="true" />
+
+            <ImageButton
+                android:id="@+id/stop_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_action_playback_pause"
+                android:background="?android:attr/selectableItemBackground"
+                app:holdr_onClick="true" />
+        </LinearLayout>
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/venue_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:typeface="roboto_bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            tools:text="Venue" />
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/venue2_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:typeface="roboto_bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            tools:text="Venue2" />
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/purchase_tickets_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            app:typeface="roboto_condensed_bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:text="Buy Tickets"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <com.getgigradio.gigradio.widget.RippleLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+</RelativeLayout>
