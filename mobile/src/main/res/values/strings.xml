@@ -6,5 +6,17 @@
     <string name="stop">Stop</string>
     <string name="pause">Pause</string>
     <string name="next">Next</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buy_tickets">Buy Tickets</string>
+    <string name="get_directions">Get Directions</string>
+    <string name="venue_website">Venue Website</string>
+    <string name="share_this_event">Share This Event</string>
+    <string name="title_activity_event_details">EventDetails</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="media_route_menu_title">Media route</string>
+    <string name="show_directions">Show Directions</string>
+    <string name="drawer_open">Drawer open</string>
+    <string name="drawer_close">Drawer closed</string>
+    <string name="action_libraries">Libraries</string>
 
 </resources>

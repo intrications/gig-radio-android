@@ -1,7 +1,7 @@
 package com.getgigradio.gigradio.api;
 
-import com.getgigradio.gigradio.model.soundhoundartist.Artist;
-import com.getgigradio.gigradio.model.soundhoundtrack.Track;
+import com.getgigradio.gigradio.model.soundcloud.artist.Artist;
+import com.getgigradio.gigradio.model.soundcloud.track.Track;
 
 import java.util.List;
 

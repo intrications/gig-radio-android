@@ -1,124 +1,309 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/background_image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fitsSystemWindows="true">
+        <!-- The main content view -->
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <Button
+                    android:id="@+id/week_chooser_button"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This Week"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/ic_arrow_drop_down"
+                    style="@style/borderlessButtonStyle"
+                    android:textColor="@android:color/white"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"/>
+
+            </android.support.v7.widget.Toolbar>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/toolbar">
+
+                <!--<android.support.v7.app.MediaRouteButton-->
+                <!--android:id="@+id/media_route_button"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:mediaRouteTypes="user" />-->
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/share_button"-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_height="48dp"-->
+                <!--android:scaleType="centerInside"-->
+                <!--android:src="@drawable/ic_action_share"-->
+                <!--android:background="?android:attr/selectableItemBackground"-->
+                <!--app:holdr_onClick="true"-->
+                <!--android:paddingLeft="8dp"-->
+                <!--android:paddingRight="8dp" />-->
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <fr.castorflex.android.circularprogressbar.CircularProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:indeterminate="true"
+                        android:indeterminateOnly="false"
+                        app:cpb_color="#fff"
+                        app:cpb_stroke_width="2dp"
+                        app:cpb_min_sweep_angle="30"
+                        app:cpb_max_sweep_angle="300"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:id="@+id/details_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp">
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/artist_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:typeface="roboto_light"
+                            android:textSize="48sp"
+                            android:textColor="@android:color/white"
+                            tools:text="Artist"
+                            android:ellipsize="end"
+                            android:maxLines="2"/>
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/track_name_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:typeface="roboto_light"
+                            android:textSize="22sp"
+                            android:textColor="@android:color/white"
+                            tools:text="Song name"
+                            android:ellipsize="end"
+                            android:maxLines="2"/>
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/star_button_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.getgigradio.gigradio.widget.ExpandingStarToggleButton
+                        android:id="@+id/star_button"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"/>
+
+                    <RelativeLayout
+                        android:id="@+id/event_details_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/star_button"
+                        android:clickable="true"
+                        android:padding="8dp">
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/event_date_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:typeface="roboto_bold"
+                            android:textSize="18sp"
+                            android:textColor="@android:color/white"
+                            tools:text="Date"/>
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/venue_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_date_text_view"
+                            app:typeface="roboto_light"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/white"
+                            android:textAllCaps="true"
+                            tools:text="Venue"
+                            android:ellipsize="end"
+                            android:maxLines="1"/>
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/venue2_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/venue_text_view"
+                            app:typeface="roboto_light"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/white"
+                            android:textAllCaps="true"
+                            tools:text="Venue2"
+                            android:ellipsize="end"
+                            android:maxLines="1"/>
+                    </RelativeLayout>
+
+                    <com.devspark.robototextview.widget.RobotoTextView
+                        android:id="@+id/purchase_tickets_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        app:typeface="roboto_condensed_bold"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/white"
+                        android:text="Buy Tickets"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp">
+
+                    <com.devspark.robototextview.widget.RobotoTextView
+                        android:id="@+id/position_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0:00"
+                        android:layout_alignParentLeft="true"/>
+
+                    <com.devspark.robototextview.widget.RobotoTextView
+                        android:id="@+id/duration_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0:00"
+                        android:layout_alignParentRight="true"/>
+
+                    <SeekBar
+                        android:id="@+id/seekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/position_text_view"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <com.getgigradio.gigradio.widget.ExpandingCircleButton
+                        android:id="@+id/previous_button"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_action_previous"
+                        app:holdr_onClick="true"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        tools:ignore="MissingPrefix"/>
+
+                    <com.getgigradio.gigradio.widget.ExpandingCircleButton
+                        android:id="@+id/stop_button"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_action_play"
+                        app:holdr_onClick="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        tools:ignore="MissingPrefix"/>
+
+                    <com.getgigradio.gigradio.widget.ExpandingCircleButton
+                        android:id="@+id/next_button"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_action_next"
+                        app:holdr_onClick="true"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        tools:ignore="MissingPrefix"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- The navigation drawer -->
+        <LinearLayout
+            android:id="@+id/left_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:gravity="center">
+            android:layout_gravity="left|start"
+            android:divider="@android:color/holo_orange_dark"
+            android:dividerHeight="1dp"
+            android:background="#111"
+            android:clipToPadding="false"
+            android:fitsSystemWindows="true">
 
-            <fr.castorflex.android.circularprogressbar.CircularProgressBar
-                android:id="@+id/progress"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:indeterminate="true"
-                app:cpb_color="#fff"
-                app:spb_speed="1.0"
-                app:cpb_stroke_width="4dp"
-                app:cpb_min_sweep_angle="10"
-                app:cpb_max_sweep_angle="300"
-                android:layout_gravity="center" />
-
-
-            <com.devspark.robototextview.widget.RobotoTextView
-                android:id="@+id/artist_text_view"
+            <Button
+                android:id="@+id/show_directions_button"
+                style="@style/borderlessButtonStyleLeftAligned"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:typeface="roboto_thin"
-                android:textSize="48sp"
-                android:textColor="@android:color/white"
-                tools:text="Artist" />
+                android:text="Radio"/>
 
-            <com.devspark.robototextview.widget.RobotoTextView
-                android:id="@+id/track_name_text_view"
+            <Button
+                android:id="@+id/show_directions2_button"
+                style="@style/borderlessButtonStyleLeftAligned"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:typeface="roboto_regular"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                tools:text="Song name" />
+                android:text="Favorites"/>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/show_directions3_button"
+
+                style="@style/borderlessButtonStyleLeftAlignedBlue"
+                android:text="Settings"/>
         </LinearLayout>
 
-        <SeekBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/seekBar"
-            android:visibility="gone" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/next_button"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_action_playback_next"
-                android:background="?android:attr/selectableItemBackground"
-                app:holdr_onClick="true" />
-
-            <ImageButton
-                android:id="@+id/stop_button"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_action_playback_pause"
-                android:background="?android:attr/selectableItemBackground"
-                app:holdr_onClick="true" />
-        </LinearLayout>
-
-        <com.devspark.robototextview.widget.RobotoTextView
-            android:id="@+id/venue_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:typeface="roboto_bold"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:textAllCaps="true"
-            tools:text="Venue" />
-
-        <com.devspark.robototextview.widget.RobotoTextView
-            android:id="@+id/venue2_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:typeface="roboto_bold"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:textAllCaps="true"
-            tools:text="Venue2" />
-
-        <com.devspark.robototextview.widget.RobotoTextView
-            android:id="@+id/purchase_tickets_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            app:typeface="roboto_condensed_bold"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:text="Buy Tickets"
-            android:visibility="gone" />
-
-    </LinearLayout>
-
-    <com.getgigradio.gigradio.widget.RippleLayout
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true" />
+    </android.support.v4.widget.DrawerLayout>
 </RelativeLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="songkick_base_url">http://api.songkick.com/api/3.0</string>
+    <string name="soundcloud_base_url">http://api.soundcloud.com</string>
+</resources>

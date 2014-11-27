@@ -6,6 +6,8 @@ This is a product being built by the Assembly community. You can help push this 
 
 ## Building
 
+Requires Java 8 due to retrolambda
+
 ### Android Studio
 
 Clone the sourcecode.

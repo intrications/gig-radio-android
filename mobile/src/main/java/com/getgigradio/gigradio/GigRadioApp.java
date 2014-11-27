@@ -6,6 +6,7 @@ import android.content.Context;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.integration.okhttp.OkHttpUrlLoader;
 import com.bumptech.glide.load.model.GlideUrl;
+import com.getgigradio.gigradio.module.GigRadioModule;
 import com.squareup.okhttp.OkHttpClient;
 
 import net.danlew.android.joda.JodaTimeAndroid;
@@ -18,9 +19,13 @@ public class GigRadioApp extends Application {
 
     private ObjectGraph objectGraph;
 
+    private static GigRadioApp app;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
+        app = this;
 
         Glide.get(this).register(GlideUrl.class, InputStream.class,
                 new OkHttpUrlLoader.Factory(new OkHttpClient()));
@@ -41,5 +46,9 @@ public class GigRadioApp extends Application {
 
     public static GigRadioApp get(Context context) {
         return (GigRadioApp) context.getApplicationContext();
+    }
+
+    public static GigRadioApp getApplication() {
+        return app;
     }
 }

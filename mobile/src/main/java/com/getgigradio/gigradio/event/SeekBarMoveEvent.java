@@ -1,6 +1,6 @@
 package com.getgigradio.gigradio.event;
 
-import com.getgigradio.gigradio.model.soundhoundtrack.Track;
+import com.getgigradio.gigradio.model.soundcloud.track.Track;
 
 public class SeekBarMoveEvent {
 

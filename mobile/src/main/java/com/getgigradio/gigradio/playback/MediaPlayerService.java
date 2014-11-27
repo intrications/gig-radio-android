@@ -29,7 +29,7 @@ import com.getgigradio.gigradio.event.NoSongPlayingEvent;
 import com.getgigradio.gigradio.event.PausingEvent;
 import com.getgigradio.gigradio.event.PlayingEvent;
 import com.getgigradio.gigradio.event.SeekBarMoveEvent;
-import com.getgigradio.gigradio.model.soundhoundtrack.Track;
+import com.getgigradio.gigradio.model.soundcloud.track.Track;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -244,7 +244,7 @@ public class MediaPlayerService extends Service implements MediaPlayer.OnComplet
             EventBus.getDefault().post(new NoSongPlayingEvent());
             currentPosition = intent.getIntExtra(PLAYLIST_CURRENT_POSITION, 0);
             MediaPlayerService.this.currentPlaylistSongs = new ArrayList<>();
-            currentPlaylistSongs.add((Track) intent.getParcelableExtra("track"));
+            currentPlaylistSongs.add(intent.getParcelableExtra("track"));
             play();
         } else if (START_PAUSE.equals(intent.getAction())) {
             pausePlayback();
@@ -315,7 +315,7 @@ public class MediaPlayerService extends Service implements MediaPlayer.OnComplet
             notification = new NotificationCompat.Builder(getApplicationContext())
                     .setContentTitle(getString(R.string.app_name))
                     .setContentText("Now Playing: " + currentSong.getTitle() + " - " + currentSong.getUser().getUsername())
-                    .setSmallIcon(R.drawable.ic_launcher)
+                    .setSmallIcon(R.drawable.ic_launcher_white)
                     .setContentIntent(pi)
                     .addAction(R.drawable.ic_action_playback_pause, getString(R.string.pause), stopMusicPendingIntent)
                     .addAction(R.drawable.ic_action_playback_next, getString(R.string.next), null)

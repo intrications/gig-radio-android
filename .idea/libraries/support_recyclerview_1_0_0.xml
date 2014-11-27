@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="support-recyclerview-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.annotatedadapter/support-recyclerview/1.0.0/62b74adb2d5a977380e8fdef594c1cc2d46f49d/support-recyclerview-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.annotatedadapter/support-recyclerview/1.0.0/dd0772cde25ab1b2b1e826b41bcc54cfdfb84eb/support-recyclerview-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

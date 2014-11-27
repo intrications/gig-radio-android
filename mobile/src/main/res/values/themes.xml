@@ -1,0 +1,103 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat">
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimary</item>-->
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <!--<item name="android:windowBackground">@android:color/black</item>-->
+        <item name="android:seekBarStyle">@style/GigRadioSeekBarStyle</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+    </style>
+
+    <style name="GigRadioTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:icon">@drawable/ic_launcher_white</item>
+        <!--<item name="android:windowBackground">@null</item>-->
+        <!--<item name="android:windowActionBar">false</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:actionBarStyle">@style/ActionBarStyle.Transparent</item>-->
+        <!--<item name="android:windowActionBarOverlay">true</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <!--<item name="accentColor">#fff</item>-->
+        <!--<item name="showcaseViewStyle">@style/CustomShowcaseTheme3</item>-->
+        <item name="android:seekBarStyle">@style/GigRadioSeekBarStyle</item>
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+
+        <!--<item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <item name="colorPrimary">@android:color/holo_green_dark</item>
+        <item name="colorAccent">@android:color/holo_orange_dark</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <!--<style name="ActionBarStyle.Transparent" parent="@android:Widget.ActionBar">-->
+        <!--<item name="android:background">@null</item>-->
+        <!--&lt;!&ndash;<item name="android:displayOptions">homeAsUp|showHome|showTitle</item>&ndash;&gt;-->
+        <!--<item name="android:titleTextStyle">@style/ActionBarStyle.Transparent.TitleTextStyle</item>-->
+    <!--</style>-->
+
+    <!--<style name="ActionBarStyle.Transparent.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+    <!--</style>-->
+
+    <style name="smallCapsText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="borderlessButtonStyle" parent="android:Widget.Holo.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="borderlessButtonStyleLeftAligned" parent="borderlessButtonStyle">
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="borderlessButtonStyleLeftAlignedBlue" parent="borderlessButtonStyle">
+        <item name="android:gravity">left|center</item>
+        <item name="android:textColor">@color/gig_radio_blue</item>
+    </style>
+
+    <style name="CustomShowcaseTheme3" parent="ShowcaseView">
+        <item name="sv_backgroundColor">#b000</item>
+        <item name="sv_showcaseColor">#bfff</item>
+        <item name="sv_buttonText">Close</item>
+        <item name="sv_buttonBackgroundColor">#fff</item>
+        <item name="sv_buttonForegroundColor">#000</item>
+        <item name="sv_tintButtonColor">false</item>
+        <item name="sv_titleTextAppearance">@style/CustomTitle</item>
+    </style>
+
+    <style name="CustomTitle" parent="TextAppearance.ShowcaseView.Title">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="GigRadioSeekBarStyle" parent="android:Widget.Holo.Light.SeekBar">
+        <item name="android:progressDrawable">@drawable/apptheme_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/apptheme_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:thumb">@drawable/apptheme_scrubber_control_selector_holo_light</item>
+    </style>
+
+</resources>

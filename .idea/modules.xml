@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/android-core/android-core.iml" filepath="$PROJECT_DIR$/android-core/android-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/gig-radio-android.iml" filepath="$PROJECT_DIR$/gig-radio-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/glass/glass.iml" filepath="$PROJECT_DIR$/glass/glass.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobile/mobile.iml" filepath="$PROJECT_DIR$/mobile/mobile.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tv/tv.iml" filepath="$PROJECT_DIR$/tv/tv.iml" />
-      <module fileurl="file://$PROJECT_DIR$/wear/wear.iml" filepath="$PROJECT_DIR$/wear/wear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roboelectric-tests/roboelectric-tests.iml" filepath="$PROJECT_DIR$/roboelectric-tests/roboelectric-tests.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageButton
+        android:id="@+id/wp_previous_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_action_back_material_black"
+        android:scaleType="centerInside"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/wp_selected_week_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Current value"
+        style="@style/smallCapsText"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/wp_next_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_action_forward_material_black"
+        android:scaleType="centerInside"
+        android:background="?android:attr/selectableItemBackground"/>
+</merge>

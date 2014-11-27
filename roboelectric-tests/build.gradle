@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    def androidModule = project(':mobile')
+    compile androidModule
+
+    testCompile androidModule.android.applicationVariants.toList().first().javaCompile.classpath
+    testCompile androidModule.android.applicationVariants.toList().first().javaCompile.outputs.files
+    testCompile files(androidModule.plugins.findPlugin("com.android.application").getBootClasspath())
+
+    testCompile 'junit:junit:4.+'
+    testCompile 'org.robolectric:robolectric:2.3'
+
+    testCompile "org.boundbox:boundbox-library:1.2.0"
+}
