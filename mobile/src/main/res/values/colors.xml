@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="gig_radio_purple">#eb008b</color>
     <color name="gradient1a">#99eb008b</color>
     <color name="gradient1b">#99842d69</color>
     <color name="gradient2a">#997e57c2</color>
@@ -14,6 +13,13 @@
     <color name="ripple_drawable">#fff</color>
 
 
+    <color name="gig_radio_purple">#eb008b</color>
     <color name="gig_radio_blue">#41a4f4</color>
     <color name="colorPrimary">#ff0000</color>
+
+    <!-- main color for drawable-v21/my_ripple -->
+    <color name="my_color_highlight">@color/gig_radio_blue</color>
+    <!-- main color for drawable/my_ripple -->
+    <color name="my_color_highlight_press">#77000000</color>
+    <color name="my_color_highlight_focus">#CC000000</color>
 </resources>

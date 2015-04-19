@@ -52,8 +52,7 @@ public class PlaylistCreationService extends WakefulIntentService {
     @Override
     public void onCreate() {
         super.onCreate();
-        GigRadioApp app = (GigRadioApp) getApplication();
-        app.inject(this);
+        ((GigRadioApp) getApplication()).inject(this);
     }
 
     @Override
@@ -63,6 +62,7 @@ public class PlaylistCreationService extends WakefulIntentService {
 
     private void createPlaylist() {
 
+        // If playlist already created then just get next track
         if (savedEvents != null) {
             getNextTrack();
         }
@@ -111,8 +111,8 @@ public class PlaylistCreationService extends WakefulIntentService {
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                         // Probably not needed but makes clear that only one result is expected
-                .single()
-                .flatMap(s -> Observable.from(s.getResultsPage().getResults().getEvents()))
+                .first()
+                .flatMap(eventObject -> Observable.from(eventObject.getResultsPage().getResults().getEvents()))
                         // Skip events with no start time
                 .filter(event -> event.getStart().getDatetime() != null)
                 .toList()

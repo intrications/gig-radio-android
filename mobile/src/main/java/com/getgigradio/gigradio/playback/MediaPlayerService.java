@@ -21,8 +21,8 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.getgigradio.gigradio.BuildConfig;
-import com.getgigradio.gigradio.activity.MainActivity;
 import com.getgigradio.gigradio.R;
+import com.getgigradio.gigradio.activity.MainActivity;
 import com.getgigradio.gigradio.event.BufferingEvent;
 import com.getgigradio.gigradio.event.NewSongEvent;
 import com.getgigradio.gigradio.event.NoSongPlayingEvent;
@@ -295,7 +295,7 @@ public class MediaPlayerService extends Service implements MediaPlayer.OnComplet
 
             Track currentSong = currentPlaylistSongs.get(currentPosition);
 
-            EventBus.getDefault().post(new NewSongEvent(currentSong));
+            EventBus.getDefault().post(new NewSongEvent(null, currentSong));
 
             Intent stopMusicIntent = new Intent(this, MediaPlayerService.class);
             stopMusicIntent.setAction(START_STOP);

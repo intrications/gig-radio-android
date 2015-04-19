@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <ImageView
@@ -274,35 +275,47 @@
             android:layout_width="240dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_gravity="left|start"
+            android:layout_gravity="start"
             android:divider="@android:color/holo_orange_dark"
             android:dividerHeight="1dp"
             android:background="#111"
             android:clipToPadding="false"
             android:fitsSystemWindows="true">
 
-            <Button
+            <TextView
                 android:id="@+id/show_directions_button"
-                style="@style/borderlessButtonStyleLeftAligned"
                 android:layout_width="match_parent"
-                android:text="Radio"/>
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical|start"
+                android:paddingLeft="8dp"
+                android:text="Radio"
+                style="@style/TextAppearance.AppCompat.Button"/>
 
-            <Button
+            <TextView
                 android:id="@+id/show_directions2_button"
-                style="@style/borderlessButtonStyleLeftAligned"
                 android:layout_width="match_parent"
-                android:text="Favorites"/>
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical|start"
+                android:paddingLeft="8dp"
+                android:text="Favorites"
+                style="@style/TextAppearance.AppCompat.Button"/>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
 
-            <Button
+            <TextView
                 android:id="@+id/show_directions3_button"
-
-                style="@style/borderlessButtonStyleLeftAlignedBlue"
-                android:text="Settings"/>
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical|start"
+                android:paddingLeft="8dp"
+                android:text="Settings"
+                style="@style/TextAppearance.AppCompat.Button"/>
         </LinearLayout>
 
     </android.support.v4.widget.DrawerLayout>

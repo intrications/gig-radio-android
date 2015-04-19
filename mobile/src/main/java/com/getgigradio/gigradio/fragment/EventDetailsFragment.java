@@ -23,8 +23,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import dreamers.graphics.RippleDrawable;
-
 public class EventDetailsFragment extends Fragment implements Holdr_FragmentEventDetails.Listener {
 
     private Event event;
@@ -67,15 +65,6 @@ public class EventDetailsFragment extends Fragment implements Holdr_FragmentEven
 
         holdr = new Holdr_FragmentEventDetails(view);
         holdr.setListener(this);
-
-        RippleDrawable.createRipple(holdr.buyTicketsButton, getResources().getColor(R.color
-                .ripple_drawable));
-        RippleDrawable.createRipple(holdr.venueWebsiteButton, getResources().getColor(R.color
-                .ripple_drawable));
-        RippleDrawable.createRipple(holdr.showDirectionsButton, getResources().getColor(R.color
-                .ripple_drawable));
-        RippleDrawable.createRipple(holdr.shareButton, getResources().getColor(R.color
-                .ripple_drawable));
 
         holdr.artistTextView.setText(event.getPerformances().get(0).getDisplayName());
         holdr.venueTextView.setText(event.getVenue().getDisplayName());

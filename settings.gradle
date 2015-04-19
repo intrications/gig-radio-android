@@ -1,1 +1,1 @@
-include ':mobile', ':android-core', ':roboelectric-tests'
+include ':mobile'
